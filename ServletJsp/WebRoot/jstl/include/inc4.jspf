@@ -1,0 +1,7 @@
+inc4.jsp
+<!--${cp=pageContext.request.contextPath}-->
+<img src="${cp=="/"? "" : cp}/jstl/image/image1.png"/>  <!-- 显示图片 -->
+
+${cp=null}
+
+<img src="${cp=="/"? "" : cp}/jstl/image/image2.png"/> <!-- 不显示图片 -->
