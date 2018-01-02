@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>Servlet & Jsp</title>
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -54,5 +54,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <!-- jsp声明 -->
     <P><a href="grammar/shengming.jsp">jsp声明</a></P>
+    
+    <!-- jdbc -->
+    <P><a href="jdbc/jdbc.jsp">jdbc</a></P>
+    
+    
   </body>
 </html>

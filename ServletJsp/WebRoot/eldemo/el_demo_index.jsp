@@ -25,7 +25,7 @@
         </p>
         <p>
         <h3>Creating List</h3>
-        List of flowers: $'{["Aster", "Carnation", "Rose"]}'
+        List of flowers: ${["Aster", "Carnation", "Rose"]}
         </p>
         <p>
         <h3>Creating Map</h3>
@@ -48,7 +48,7 @@
         </span>
         </p>
         <p>Map
-            $'{[1,2,3,4].stream().map(n -> Math.sqrt(n)).toList()}'
+            ${[1,2,3,4].stream().map(n -> Math.sqrt(n)).toList()}
         </p>
         Today is ${LocalDate.now()}
         <p>
@@ -64,31 +64,31 @@
             Sorted: ${cities.stream().sorted().toList()}
         </p>
         <p>
-            Average: $'{[1, 3, 5, 7].stream().average().get()}'
+            Average: ${[1, 3, 5, 7].stream().average().get()}
         </p>
         <p>
-            Sum: $'{[1, 3, 5, 7].stream().sum()}'
+            Sum: ${[1, 3, 5, 7].stream().sum()}
         </p>
         <p>
             Count: ${cities.stream().count()}
         </p>
         <p>
-            Min: $'{[1,3,100,1000].stream().min().get()}'
+            Min: ${[1,3,100,1000].stream().min().get()}
         </p>
         <p>
-            Max: $'{[1,3,100,1000].stream().max().get()}'
+            Max: ${[1,3,100,1000].stream().max().get()}
         </p>
         <p>
-            Map: $'{[1, 3, 5].stream().map(x -> 2 * x).toList()}'
+            Map: ${[1, 3, 5].stream().map(x -> 2 * x).toList()}
         </p>
         <p>
-            Map: $'{cities.stream().map(x -> x.toUpperCase()).toList()}'
+            Map: ${cities.stream().map(x -> x.toUpperCase()).toList()}
         </p>
         <p>
-            Filter: $'{cities.stream().filter(x -> x.startsWith("S")).toList()}'
+            Filter: ${cities.stream().filter(x -> x.startsWith("S")).toList()}
         </p>
         <p>
-            forEach: $'{cities.stream().forEach(x -> pageContext.out.println(x))}'
+            forEach: ${cities.stream().forEach(x -> pageContext.out.println(x))}
         </p>
         <p>
         <ul>
