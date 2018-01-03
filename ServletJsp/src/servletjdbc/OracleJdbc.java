@@ -43,7 +43,7 @@ public class OracleJdbc extends HttpServlet {
 		}
 		try {
 			//获取数据库连接
-			con = DriverManager.getConnection(JDBCConfig.ORACLE_CONNECTION);
+			con = DriverManager.getConnection(JDBCConfig.ORACLE_CONNECTION,JDBCConfig.ORACLE_CONNECTION_NAME,JDBCConfig.MYSQL_CONNECTION_PASSWORD);
 			//获取Statement
 			st = con.createStatement();
 			//执行查询，返回结果集

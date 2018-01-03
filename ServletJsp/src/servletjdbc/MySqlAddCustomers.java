@@ -17,7 +17,7 @@ import jdbcconfig.JDBCConfig;
 /**
  * Servlet implementation class MySqlAdd
  */
-@WebServlet("/MySqlAdd")
+@WebServlet("/MySqlAddCustomers")
 public class MySqlAddCustomers extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -36,18 +36,19 @@ public class MySqlAddCustomers extends HttpServlet {
         String cust_address = request.getParameter("cust_address");
         String cust_city = request.getParameter("cust_city");
         String cust_state = request.getParameter("cust_state");
+        String cust_zip = request.getParameter("cust_zip");
         String cust_country = request.getParameter("cust_country");
         String cust_contact = request.getParameter("cust_contact");
         String cust_email = request.getParameter("cust_email");
-        String sql = "insert into customers(cust_id,cust_name,cust_address,cust_city,cust_state,cust_country,cust_contact,cust_email) "+
-                     "values('"+cust_id+"','"+cust_name+"','"+cust_address+"','"+cust_city+"','"+cust_state+"','"+cust_country+"','"+cust_contact+"','"+cust_email+"')";
+        String sql = "insert into customers(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email) "+
+                     "values('"+cust_id+"','"+cust_name+"','"+cust_address+"','"+cust_city+"','"+cust_state+"','"+cust_zip+"','"+cust_country+"','"+cust_contact+"','"+cust_email+"')";
         Connection con = null;
         Statement st = null;
         int  result = 0;
         try {
 			Class.forName(JDBCConfig.MYSQL_CLASS);//注册数据库
 			con = DriverManager.
-			getConnection(JDBCConfig.MYSQL_CONNECTION);//获取数据库连接
+			getConnection(JDBCConfig.MYSQL_CONNECTION,JDBCConfig.MYSQL_CONNECTION_NAME,JDBCConfig.MYSQL_CONNECTION_PASSWORD);//获取数据库连接
 			st = con.createStatement();            //获取Statement
 			result = st.executeUpdate(sql);        //执行查询，返回结果集
 			response.setContentType("text/html;charset=utf-8");
@@ -57,7 +58,7 @@ public class MySqlAddCustomers extends HttpServlet {
 			out.println("  <HEAD><TITLE>列出人员信息表</TITLE></HEAD>");
 			out.println("  <BODY>");
 			out.println("");
-			out.println("<a href=\""+request.getContextPath()+"jdbc/listCustomers.jsp\">返回人员列表</a>");
+			out.println("<a href=\""+request.getContextPath()+"/jdbc/listCustomers.jsp\">返回人员列表</a>");
 			out.println("  </BODY>");
 			out.println("</HTML>");
 			out.flush();

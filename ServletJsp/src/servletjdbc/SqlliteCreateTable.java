@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jdbcconfig.JDBCConfig;
+
 /**
  * Servlet implementation class SqlliteCreateTable
  */
@@ -39,7 +41,7 @@ public class SqlliteCreateTable extends HttpServlet {
 		out.println("  <BODY>");
         try {
         	//注册数据库
-			Class.forName("org.sqlite.JDBC");                            
+			Class.forName(JDBCConfig.SQLITE_CLASS);                            
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			out.println("<p>驱动程序加载错误</p>");
@@ -51,7 +53,7 @@ public class SqlliteCreateTable extends HttpServlet {
 			out.close();
 		}
         try {
-			con = DriverManager.getConnection("jdbc:sqlite:order.db");
+			con = DriverManager.getConnection(JDBCConfig.SQLITE_CONNECTION);
 			//获取Statement
 			st = con.createStatement();
 			String sql = "CREATE TABLE IF NOT EXISTS COMPANY " +

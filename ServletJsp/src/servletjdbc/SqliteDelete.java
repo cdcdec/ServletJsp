@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jdbcconfig.JDBCConfig;
+
 /**
  * Servlet implementation class SqliteDelete
  */
@@ -43,8 +45,8 @@ public class SqliteDelete extends HttpServlet {
 		Connection c = null;
 		Statement stmt = null;
 		try {
-			Class.forName("org.sqlite.JDBC");
-			c = DriverManager.getConnection("jdbc:sqlite:order.db");
+			Class.forName(JDBCConfig.SQLITE_CLASS);
+			c = DriverManager.getConnection(JDBCConfig.SQLITE_CONNECTION);
 			c.setAutoCommit(false);
 			out.println("<p>Opened database successfully</p>");
 		} catch (ClassNotFoundException e) {
