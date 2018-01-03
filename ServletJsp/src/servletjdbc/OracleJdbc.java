@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jdbcconfig.JDBCConfig;
+
 /**
  * Servlet implementation class OracleJdbc
  */
@@ -34,14 +36,14 @@ public class OracleJdbc extends HttpServlet {
         ResultSet rs = null;
         try {
         	//注册数据库
-			Class.forName("oracle.jdbc.driver.OracleDriver");                           
+			Class.forName(JDBCConfig.ORACLE_CLASS);                           
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("驱动程序加载错误");
 		}
 		try {
 			//获取数据库连接
-			con = DriverManager.getConnection("jdbc:oracle:thin:@222.139.214.46:1521:orcl", "mctm", "mctm");
+			con = DriverManager.getConnection(JDBCConfig.ORACLE_CONNECTION);
 			//获取Statement
 			st = con.createStatement();
 			//执行查询，返回结果集

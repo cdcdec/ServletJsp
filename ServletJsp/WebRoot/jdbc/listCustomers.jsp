@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*,jdbcconfig.JDBCConfig" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -32,9 +32,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        Statement st = null;
 	        ResultSet rs = null;
 	        try {
-				Class.forName("com.mysql.jdbc.Driver");       //注册数据库
+				Class.forName(JDBCConfig.MYSQL_CLASS);       //注册数据库
 				con = DriverManager.getConnection(            //获取数据库连接
-				"jdbc:mysql://localhost:3306/order","root","root");
+				JDBCConfig.MYSQL_CONNECTION);
 				st = con.createStatement();                  //获取Statement
 				rs = st.executeQuery("select * from customers");//执行查询，返回结果集
 		 %>

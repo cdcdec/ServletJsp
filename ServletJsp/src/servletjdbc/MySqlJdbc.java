@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jdbcconfig.JDBCConfig;
+
 /**
  * Servlet implementation class JdbcServlet
  */
@@ -33,14 +35,14 @@ public class MySqlJdbc extends HttpServlet {
         ResultSet rs = null;
         try {
         	//注册数据库
-			Class.forName("com.mysql.jdbc.Driver");                            
+			Class.forName(JDBCConfig.MYSQL_CLASS);                            
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("驱动程序加载错误");
 		}
 		try {
 			//获取数据库连接
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/order","root","root");
+			con = DriverManager.getConnection(JDBCConfig.MYSQL_CONNECTION);
 			//获取Statement
 			st = con.createStatement();
 			//执行查询，返回结果集
