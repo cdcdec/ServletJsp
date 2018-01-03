@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.UUID;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +34,7 @@ public class MySqlAddCustomers extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
         String cust_id = request.getParameter("cust_id");
+        cust_id=UUID.randomUUID().toString();
         String cust_name = request.getParameter("cust_name");
         String cust_address = request.getParameter("cust_address");
         String cust_city = request.getParameter("cust_city");
@@ -42,6 +45,7 @@ public class MySqlAddCustomers extends HttpServlet {
         String cust_email = request.getParameter("cust_email");
         String sql = "insert into customers(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email) "+
                      "values('"+cust_id+"','"+cust_name+"','"+cust_address+"','"+cust_city+"','"+cust_state+"','"+cust_zip+"','"+cust_country+"','"+cust_contact+"','"+cust_email+"')";
+        System.out.println("sql="+sql);
         Connection con = null;
         Statement st = null;
         int  result = 0;

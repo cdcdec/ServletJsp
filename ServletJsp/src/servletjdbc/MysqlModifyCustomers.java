@@ -40,7 +40,7 @@ public class MysqlModifyCustomers extends HttpServlet {
 		String cust_contact = request.getParameter("cust_contact");
 		String cust_email = request.getParameter("cust_email");
 		
-        String sql ="update customers  set cust_name=? ,cust_address=?,cust_city=?,cust_state=?,cust_zip=?,cust_country=?,cust_contact=?,cust_email=? where cust_id=?";
+        String sql ="update customers  set cust_name = ? ,cust_address = ?,cust_city = ?,cust_state = ?,cust_zip = ?,cust_country = ?,cust_contact = ?,cust_email = ? where cust_id = ?";
         Connection con = null;
         PreparedStatement prest = null;
         int  result = 0;
@@ -58,7 +58,7 @@ public class MysqlModifyCustomers extends HttpServlet {
 			prest.setString(7, cust_contact); 
 			prest.setString(8, cust_email); 
 			prest.setString(9, cust_id); 
-			result = prest.executeUpdate(sql); 
+			result = prest.executeUpdate(); 
 			
 			//执行查询，返回结果集
 			response.setContentType("text/html;charset=utf-8");

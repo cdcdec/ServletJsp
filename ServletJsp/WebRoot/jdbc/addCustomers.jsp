@@ -19,10 +19,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	
+	
+	 
+	 
 
   </head>
   
   <body>
+  
+
    <form action="${pageContext.request.contextPath}/MySqlAddCustomers" method="post">
 	      <table>
 	            <tr>
