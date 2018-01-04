@@ -11,8 +11,8 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 !WEB-INF/lib/*
+*.jar
 *.war
 *.ear
 *.zip
