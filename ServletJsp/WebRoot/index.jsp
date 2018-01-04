@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     <!-- el demo  jsp -->
-    <P><a href="demo">el_demo</a></P>
+    <P><a href="eldemo/eldemo.jsp">el_demo</a></P>
     
     
     <!-- jstl -->
