@@ -11,7 +11,8 @@
 			<font size="2" color="black">
 			<linl:copyright startY="2014" user="linl"/>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-				href="swarding99@163.com">联系我们</a> </font>
+				href="swarding99@163.com">联系我们</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+				href="goods/addGood.jsp">添加商品</a> </font>
 		</div>
 	</body>
 </html>

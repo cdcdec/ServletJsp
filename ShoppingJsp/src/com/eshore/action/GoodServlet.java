@@ -49,7 +49,13 @@ public class GoodServlet extends HttpServlet {
 					good =(Goods)gVector.get(0); 
 				request.setAttribute("good", good);
 				path="goods/good.jsp";
+			}else if(action.equals("add-good")){
+				Goods good=new Goods();
+				String gname=request.getParameter("gname");
+				
+				path="goods/good.jsp";
 			}
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
