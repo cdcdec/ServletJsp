@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>EL标签访问Java Bean示例</title>
+    <title>EL标签访问Java Bean中的属性</title>
   </head>
   <body>
       <%

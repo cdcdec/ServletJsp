@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     <!-- jstl -->
-    <P><a href="jstl/jstl_main.jsp">jstl</a></P>
+    <P><a href="jstl/jstl_index.jsp">jstl</a></P>
     
     <!-- jsp声明 -->
     <P><a href="grammar/shengming.jsp">jsp声明</a></P>
