@@ -22,9 +22,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <table border="1" width="100%">
 			<tr>
 				<td><a href="jstl/jstl1.jsp">JSTL 基础</a></td>
-				<td><a href="eldemo/ex10_2.jsp">EL标签访问JSP中不同域的对象</a></td>
-				<td><a href="eldemo/ex10_3.jsp">EL标签访问Java Bean中的属性</a></td>
+				<td><a href="jstl/sql/sql_select.jsp">sql_select</a></td>
+				<td><a href="jstl/sql/sql_insert.jsp">sql_insert</a></td>
 			</tr>
+			<tr>
+				<td><a href="eldemo/ex10_4.jsp">EL标签运算符示例</a></td>
+				<td><a href="eldemo/ex10_5.jsp">EL隐含对象</a></td>
+				<td><a href="eldemo/el_object.jsp">EL隐含对象2</a></td>
+			</tr>
+			
 			<tr>
 				<td><a href="eldemo/ex10_4.jsp">EL标签运算符示例</a></td>
 				<td><a href="eldemo/ex10_5.jsp">EL隐含对象</a></td>

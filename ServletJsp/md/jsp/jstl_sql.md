@@ -1,60 +1,75 @@
-### JSTL core
+### JSTL sql
 
-#### c:out
-
-#####语法格式
-
-```
-<c:out value="<string或表达式>" default="<string>" escapeXml="<true|false>"/>
-```
-
-##### 属性
-
-| 属性        | 描述          | 是否必要 | 默认值    |
-| --------- | ----------- | ---- | ------ |
-| value     | 要输出的内容      | 是    | 无      |
-| default   | 输出的默认值      | 否    | 主体中的内容 |
-| escapeXml | 是否忽略XML特殊字符 | 否    | true   |
-
-
-#### c:set
+#### sql:setDataSource
 
 #####语法格式
 
 ```
-用于设置变量值和对象属性
-<c:set
-   var="<string>"
-   value="<string>"
-   target="<string>"
-   property="<string>"
-   scope="<string>"/>
+<sql:setDataSource>标签用来配置数据源或者将数据源信息存储在某作用域的变量中，用来作为其它JSTL数据库操作的数据源。
+<sql:setDataSource
+  var="<string>"
+  scope="<string>"
+  dataSource="<string>"
+  driver="<string>"
+  url="<string>"
+  user="<string>"
+  password="<string>"/>
 ```
 
 ##### 属性
 
-| 属性       | 描述          | 是否必要 | 默认值   |
-| -------- | ----------- | ---- | ----- |
-| value    | 要存储的值       | 否    | 主体的内容 |
-| target   | 要修改的属性所属的对象 | 否    | 无     |
-| property | 要修改的属性      | 否    | 无     |
-| var      | 存储信息的变量     | 否    | 无     |
-| scope    | var属性的作用域   | 否    | Page  |
-#### c:remove
+| 属性         | 描述             | 是否必要 | 默认值  |
+| ---------- | -------------- | ---- | ---- |
+| driver     | 要注册的JDBC驱动     | 否    | 无    |
+| url        | 数据库连接的JDBC URL | 否    | 无    |
+| user       | 数据库用户名         | 否    | 无    |
+| password   | 数据库密码          | 否    | 无    |
+| dataSource | 事先准备好的数据库      | 否    | 无    |
+| var        | 代表数据库的变量       | 否    | 默认设置 |
+| scope      | var属性的作用域      | 否    | Page |
+#### sql:query
 
 #####语法格式
 
 ```
-用于移除一个变量
-<c:remove var="<string>" scope="<string>"/>
+<sql:query>标签用来运行SQL SELECT语句，还有就是将结果存储在作用域变量中。
+<sql:query
+  var="<string>"
+  scope="<string>"
+  sql="<string>"
+  dataSource="<string>"
+  startRow="<string>"
+  maxRows="<string>"/>
 ```
 
 ##### 属性
 
-| 属性    | 描述       | 是否必要 | 默认值   |
-| ----- | -------- | ---- | ----- |
-| var   | 要移除的变量名称 | 是    | 无     |
-| scope | 变量所属的作用域 | 否    | 所有作用域 |
+| 属性         | 描述                          | 是否必要 | 默认值   |
+| ---------- | --------------------------- | ---- | ----- |
+| sql        | 需要执行的SQL命令（返回一个ResultSet对象) | 否    | Body  |
+| dataSource | 所使用的数据库连接（覆盖默认值）            | 否    | 默认数据库 |
+| maxRows    | 存储在变量中的最大结果数                | 否    | 无穷大   |
+| startRow   | 开始记录的结果的行数                  | 否    | 0     |
+| var        | 代表数据库的变量                    | 否    | 默认设置  |
+| scope      | var属性的作用域                   | 否    | Page  |
+#### sql:update
+
+#####语法格式
+
+```
+<sql:update>标签用来执行一个没有返回值的SQL语句，比如SQL INSERT，UPDATE，DELETE语句
+<sql:update var="<string>" scope="<string>" sql="<string>" dataSource="<string>"/>
+```
+
+##### 属性
+
+| 属性         | 描述                         | 是否必要 | 默认值   |
+| ---------- | -------------------------- | ---- | ----- |
+| sql        | 需要执行的SQL命令（不返回ResultSet对象） | 否    | Body  |
+| dataSource | 所使用的数据库连接（覆盖默认值）           | 否    | 默认数据库 |
+| var        | 用来存储所影响行数的变量               | 否    | 无     |
+| scope      | var属性的作用域                  | 否    | Page  |
+
 
 #### c:catch
 

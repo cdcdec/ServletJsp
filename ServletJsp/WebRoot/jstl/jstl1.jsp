@@ -23,5 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<br />
 	<c:out value="${null}" escapeXml="false">使用的表达式结果为null，则输出该默认值</c:out>
 	<br />
+	<c:import var="data" url="http://www.runoob.com"/>
+	<c:out value="${data}"/>
 </body>
 </html>
