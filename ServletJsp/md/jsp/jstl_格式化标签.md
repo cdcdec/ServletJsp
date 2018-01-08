@@ -1,4 +1,4 @@
-## jstl格式化标签
+## jstl_格式化标签
 
 #### fmt:formatNumber﻿
 
@@ -123,3 +123,51 @@
 | z    | 时区                                    | 中部标准时间          |
 | .    |                                       | 转义文本            |
 | "    |                                       | 单引号             |
+
+#### fmt:parseDate
+#####  语法格式
+
+```
+<fmt:parseDate>标签用于使用不同的方式格式化日期。
+<fmt:parseDate
+   value="<string>"
+   type="<string>"
+   dateStyle="<string>"
+   timeStyle="<string>"
+   pattern="<string>"
+   timeZone="<string>"
+   parseLocale="<string>"
+   var="<string>"
+   scope="<string>"/>
+```
+
+##### 属性
+
+| 属性        | 描述                                   | 是否必要 | 默认值     |
+| --------- | ------------------------------------ | ---- | ------- |
+| value     | 要显示的日期                               | 是    | 无       |
+| type      | DATE, TIME, 或 BOTH                   | 否    | date    |
+| dateStyle | FULL, LONG, MEDIUM, SHORT, 或 DEFAULT | 否    | default |
+| timeStyle | FULL, LONG, MEDIUM, SHORT, 或 DEFAULT | 否    | default |
+| pattern   | 自定义格式模式                              | 否    | 无       |
+| timeZone  | 显示日期的时区                              | 否    | 默认时区    |
+| var       | 存储格式化日期的变量名                          | 否    | 显示在页面   |
+| scope     | 存储格式化日志变量的范围                         | 否    | 页面      |
+
+#### fmt:requestEncoding
+#####  语法格式
+
+```
+<fmt:requestEncoding>标签用来指定返回给Web应用程序的表单编码类型。
+<fmt:requestEncoding value="<string>"/>
+
+使用<fmt:requestEncoding>标签来指定字符集，用于解码来自表单的数据。在字符集不是ISO-8859-1时必须使用这个标签。由于大多数浏览器在它们的请求中不包含Content-Type头，所以需要这个标签。
+<fmt:requestEncoding>标签的目的就是用来指定请求的Content-Type。您必须指定一个Content-Type，就算response是通过Page指令的contentType属性来编码。这是因为response的实际区域可能与Page指令所指定的不同。
+如果页面包含 I18N-capable格式行为用于设置response的locale属性（通过调用ServletResponse.setLocale()方法），任何在页面中指定的编码集将会被覆盖。
+```
+
+##### 属性
+
+| 属性        | 描述                                   | 是否必要 | 默认值     |
+| --------- | ------------------------------------ | ---- | ------- |
+| key     | 字符编码集的名称，用于解码request参数                               | 是    | 无       |
