@@ -15,12 +15,13 @@
 <!-- <link rel="stylesheet"  type="text/css"  href="resource/index.css" > -->
 <style>
 fieldset {
-    padding:10px;
-    margin:10px;
-    color:#ff0000; 
-    font-size:20px;
-    border:#06c dashed 1px;
-} 
+	padding: 10px;
+	margin: 10px;
+	color: #ff0000;
+	font-size: 20px;
+	border: #06c dashed 1px;
+}
+
 .button {
 	width: 300px;
 	height: 45px;
@@ -61,41 +62,46 @@ fieldset {
 
 	<fieldset>
 		<legend>Servlet Filter</legend>
-		<a href="TestFilter"><button>TestFilter</button></a>
+		<a href="TestFilter"><button>TestFilter</button></a> 
+		<a href="gzip.filter"><button>gzipFilter</button></a>
 	</fieldset>
 
+	<fieldset>
+		<legend>Async Servlet</legend>
+		<a href="asyncdemo.do"><button>AsyncServlet</button></a> 
+		<a href="AsyncTestServlet"><button>AsyncTestServlet</button></a>
+	</fieldset>
 
 	<!-- el demo  jsp -->
-	<P>
-		<a href="eldemo/eldemo.jsp">el_demo</a>
-	</P>
-
-
-	<!-- jstl -->
-	<P>
-		<a href="jstl/jstl_index.jsp">jstl</a>
-	</P>
-
-	<!-- jsp声明 -->
-	<P>
-		<a href="grammar/shengming.jsp">jsp声明</a>
-	</P>
-
-	<!-- jdbc -->
-	<P>
-		<a href="jdbc/jdbc.jsp">jdbc</a>
-	</P>
-
-
+	<fieldset>
+		<legend>EL Jsp</legend>
+		<a href="eldemo/eldemo.jsp"><button>Jsp</button></a> 
+		<a	href="jstl/jstl_index.jsp"><button>jstl</button></a> 
+		<a	href="grammar/shengming.jsp"><button>jsp声明</button></a> 
+		<a	href="jdbc/jdbc.jsp"><button>jdbc</button></a>
+	</fieldset>
+	
+	
+	<fieldset>
+		<legend>Java Bean</legend>
+		<a href="javaBean/product1.jsp"><button>利用表达式设置Bean属性</button></a> 
+		<a	href="javaBean/product2.jsp"><button>表单参数设置Bean属性值</button></a> 
+		<a	href="javaBean/product3.jsp"><button>表单参数值设置Bean属性值2</button></a>
+		<a	href="javaBean/product4.jsp"><button>利用表达式设置Bean属性2</button></a> 
+		<a	href="javaBean/requestScope.jsp"><button>Bean作用域request</button></a>
+		<a	href="javaBean/sessionScope.jsp"><button>Bean作用域session</button></a>
+		<a	href="javaBean/applicationScope.jsp"><button>Bean作用域application</button></a>
+		<a	href="javaBean/login.jsp"><button>登录验证</button></a>
+		<a	href="javaBean/product_list.jsp"><button>产品列表(product_list.jsp)</button></a>
+		<a	href="javaBean/product_add.jsp"><button>产品添加(product_add.jsp)</button></a>
+	</fieldset>
 
 </body>
 
 <script type="text/javascript">
 	var btns = document.getElementsByTagName("button");
 	for (var i = 0; i < btns.length; i++) {
-
 		btns[i].className = 'button';
-
 	}
 </script>
 </html>
