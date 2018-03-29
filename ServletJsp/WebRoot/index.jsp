@@ -40,7 +40,7 @@ fieldset {
 		<legend>Servlet</legend>
 		<a href="welcome"><button>WelcomeServlet</button></a> <a
 			href="generic"><button>GenericServletDemo</button></a> <a
-			href="MyServlet"><button>my</button></a> <a href="servletConfigDemo"><button>ServletConfigDemo</button></a>
+			href="my"><button>MyServlet</button></a> <a href="servletConfigDemo"><button>ServletConfigDemo</button></a>
 		<a href="form"><button>FormServlet</button></a> <a href="simple"><button>SimpleServlet</button></a>
 		<a href="welcome2"><button>WelcomeServlet2</button></a> <a
 			href="cookieClass"><button>CookieClassServlet</button></a> <a
